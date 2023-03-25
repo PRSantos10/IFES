@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Busca Sequencial</title>
+  </head>
+  <body>
+    <h1>Busca Sequencial</h1>
+    <button onclick="buscaSequencial(vetor, 76)">Executar</button>
+
+    <script>
+      //gerar um vetor
+      let vetor = [];
+      for (let aux = 1; aux <= 100; aux++) {
+        vetor.push(aux);
+      }
+      function buscaSequencial(vetor, buscado) {
+        var encontrado = false;
+        var posicao;
+        for (var i = 0; i < vetor.length; i++) {
+          if (vetor[i] === buscado) {
+            encontrado = true;
+            posicao = i;
+            break;
+          }
+        }
+        if (encontrado === true) {
+          alert(
+            "O numero " +
+              buscado +
+              " foi encontrado na posição " +
+              posicao +
+              ", e foram feitas " +
+              i +
+              " comparações!"
+          );
+        } else {
+          alert("O numero " + buscado + " não existe nesse vetor!");
+        }
+      }
+    </script>
+  </body>
+</html>
