@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Busca Binaria</title>
+  </head>
+  <body>
+    <h1>Busca Binária</h1>
+    <button onclick="BuscaBinaria(vetor, 30)">Executar</button>
+
+    <script>
+      let vetor = [];
+      for (let aux = 1; aux <= 100; aux++) {
+        vetor.push(aux);
+      }
+      function BuscaBinaria(vetor, buscado) {
+        var inicio = 0;
+        var fim = vetor.length - 1;
+        var meio;
+        var encontrado = false;
+        let cont = 1;
+        while (inicio <= fim) {
+          meio = Math.floor((inicio + fim) / 2);
+          if (vetor[meio] === buscado) {
+            encontrado = true;
+            break;
+          } else if (vetor[meio] < buscado) {
+            inicio = meio + 1;
+          } else {
+            fim = meio - 1;
+          }
+          cont++;
+        }
+        if (encontrado) {
+          alert("Numero " + buscado + " foi encontrado na posição " + meio + ", e foram realizadas " + cont + " comparações!");
+        } else {
+          alert("Numero " + buscado + " não existe nesse vetor!");
+        }
+      }
+    </script>
+  </body>
+</html>
